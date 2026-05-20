@@ -34,10 +34,10 @@ FacilityOps is a simple booking system designed for staff to reserve facilities 
 ## Screenshots
 
 ### Login Page
-![Login Page](screenshots/login.png)
+![Login Page](login.png)
 
 ### Booking Page
-![Booking Page 1](screenshots/booking1.png)
-![Booking Page 2](screenshots/booking2.png)
+![Booking Page 1](booking1.png)
+![Booking Page 2](booking2.png)
 
    
