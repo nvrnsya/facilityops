@@ -10,8 +10,10 @@ FacilityOps is a simple booking system designed for staff to reserve facilities 
 - Check booking history
 
 ## Technologies Used
-- Python
-- Tkinter (for GUI)
+- PHP
+- Javascript
+- CSS
+- HTML (for GUI)
 - SQLite (for database)
 
 ## Installation
