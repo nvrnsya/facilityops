@@ -101,7 +101,7 @@ facilityops/
 ### Booking Page
 ![Booking Page](screenshot/booking1.png)
 ![Calendar Book](screenshot/bookingcalendar.png)
-![Booking Form](screenshot/bookingform.png)
+![Booking Form](screenshot/bookingform1.png)
 
 ## System Design
 
