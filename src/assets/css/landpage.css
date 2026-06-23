@@ -1,0 +1,1051 @@
+/* landpage.css original */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Solution 1: Add bottom padding to body to account for fixed footer */
+body {
+    min-height: 100vh;
+    background: #ffffff; /* Light gradient background */
+    color: #2d3748;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    padding-top: 120px;
+    padding-bottom: 0; /* Add this to prevent content from hiding behind footer */
+    line-height: 1.6;
+    overflow-x: hidden; /* Change from overflow: hidden to allow vertical scrolling */
+}
+
+/* ========== MARQUEE SECTION ========== */
+.marquee-container {
+    position: fixed;
+    top: 70px; /* Right below header */
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #0ea5e9 0%, #2563eb 100%); /* Sky Blue to Blue */
+    padding: 12px 0;
+    overflow: hidden;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(26, 54, 93, 0.3);
+}
+
+.marquee-content {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    animation: marquee 30s linear infinite;
+    gap: 20px;
+}
+
+.marquee-icon {
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.marquee-text {
+    color: #ffd700;
+    font-weight: 700;
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+.marquee-item {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.marquee-item:hover {
+    color: #ffd700;
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.marquee-separator {
+    color: #90cdf4;
+    font-size: 18px;
+    margin: 0 15px;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Hover to pause marquee */
+.marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+/* Quick Access Navigation - Glassmorphism Style (Blue) */
+.quick-nav {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px 24px;
+    background: linear-gradient(135deg, rgba(26, 54, 93, 1.0) 0%, rgba(44, 82, 130, 1.0) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(26, 54, 93, 0.4);
+}
+
+.quick-nav h3 {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 32px;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.quick-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+}
+
+.quick-nav-item {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 24px 16px;
+    border-radius: 16px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.quick-nav-item:hover {
+    transform: translateY(-4px) scale(1.02);
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.quick-nav-item .icon {
+    font-size: 32px;
+    display: block;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.quick-nav-item:hover .icon {
+    transform: scale(1.15) rotateY(180deg);
+}
+
+.quick-nav-item span:last-child {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Back to Top Button */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #2c5282;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(44, 82, 130, 0.4);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#backToTop:hover {
+    background: #1a365d;
+}
+
+/* Responsive for Quick Nav */
+@media (max-width: 768px) {
+    .quick-nav {
+        max-width: calc(100% - 32px);
+        margin: 40px 16px;
+        padding: 32px 20px;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+    
+    .quick-nav h3 {
+        font-size: 22px;
+        margin-bottom: 24px;
+    }
+    
+    .quick-nav-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    
+    .quick-nav-item {
+        padding: 20px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .quick-nav {
+        max-width: calc(100% - 24px);
+        margin: 40px 12px;
+        padding: 24px 16px;
+    }
+    
+    .quick-nav-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .quick-nav-item .icon {
+        font-size: 28px;
+    }
+}
+
+/* Overview Facility */
+.mySwiper {
+    max-width: 100%;
+    width: 100%;
+    padding: 40px 0;
+    margin: 0 auto;
+}
+
+/* CONSISTENT H2 STYLING FOR ALL SECTIONS */
+.mySwiper h2,
+.upcoming-events h2,
+.announcements h2,
+.how-it-works h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a365d;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #2c5282;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mySwiper .swiper-slide {
+    font-size: 18px;
+    width: 800px;
+}
+
+.box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.box img {
+    width: 800px;
+    height: 400px; 
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+}
+
+.box span {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.box .desc {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transform: scale(1.1);
+    transition: all 0.4s ease;
+    border-radius: 8px;
+}
+
+.box .desc .icon {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 26px;
+    animation: pulse 2s infinite;
+    margin: 0;
+}
+
+.box .desc p {
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.box:hover .desc {
+    opacity: 1;
+    transform: scale(1);
+}
+
+@media (max-width: 768px) {
+    .mySwiper h2,
+    .upcoming-events h2,
+    .announcements h2,
+    .how-it-works h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+}
+
+/* animasi icon info */
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.7; }
+}
+
+.swiper-pagination {
+    position: relative !important; 
+    margin-top: 20px; 
+    text-align: center; 
+}
+
+.swiper-pagination-bullet {
+    background: #fff;
+    width: 9px;
+    height: 9px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #fff;
+    scale: 0.8;  
+}
+
+section {
+    padding: 40px 20px;
+    margin: 30px auto;
+    max-width: 1000px;
+}
+
+/* Upcoming Events */
+.upcoming-events ul {
+    list-style: none;
+    padding: 0;
+}
+.upcoming-events li {
+    margin: 10px 0;
+    padding: 10px;
+    background: #f7fafc;
+    border-left: 4px solid #3182ce;
+}
+
+.upcoming-events .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: #3182ce;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.upcoming-events .btn:hover {
+    background: #2c5282;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3);
+}
+
+/* Announcements */
+.announcements .notice {
+    background: #fff3cd;
+    border: 1px solid #ffeeba;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+/* How it Works */
+.steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.step {
+    flex: 1 1 200px;
+    background: #edf2f7;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+.step span {
+    display: block;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* Style for your contact section - positioned at bottom */
+/* ========== Institution Container ========== */
+.institution-container {
+    max-width: 1350px;
+    margin: 100px auto 20px auto;
+    padding: 40px 24px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border: 1px solid #e2e8f0;
+    z-index: 998;
+}
+
+.institution-container h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    text-align: center;
+    color: #1a365d;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.institution-container h2::after {
+    display: none;
+}
+
+.institution-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.institution-info img {
+    width: 275px;
+    height: 115px;
+    margin-bottom: 16px;
+}
+
+.institution-info p {
+    color: #4a5568;
+    font-size: 14px;
+    text-align: center;
+    margin: 4px 0;
+}
+
+.institution-info a {
+    color: #3182ce;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.institution-info a:hover {
+    color: #2b6cb0;
+    text-decoration: underline;
+}
+
+/* How to Book Footer Styles */
+.how-to-book-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid #e2e8f0;
+}
+
+.how-to-book-footer p {
+    color: #4a5568;
+    font-size: 16px;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.faq-link-btn {
+    display: inline-block;
+    padding: 14px 36px;
+    background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(44, 82, 130, 0.3);
+    letter-spacing: 0.3px;
+}
+
+.faq-link-btn:hover {
+    background: linear-gradient(135deg, #1a365d 0%, #0f2847 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(26, 54, 93, 0.5);
+    color: #ffffff;
+}
+
+/* Highlight View Docs button - Help Card Enhancement */
+.help-card:last-child {
+    border: 2px solid #f6ad55;
+    background: linear-gradient(135deg, #fffaf0 0%, #fef5e7 100%);
+    position: relative;
+    overflow: visible;
+}
+
+.help-card:last-child::before {
+    content: '⭐ RECOMMENDED';
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: linear-gradient(135deg, #f6ad55 0%, #ed8936 100%);
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(237, 137, 54, 0.4);
+}
+
+.help-card:last-child .help-icon {
+    background: linear-gradient(135deg, #f6ad55 0%, #ed8936 100%);
+    animation: iconBounce 2s ease-in-out infinite;
+}
+
+.help-card:last-child h3 {
+    color: #c05621;
+}
+
+.help-card:last-child p {
+    color: #744210;
+}
+
+.help-card:last-child .help-btn {
+    background: linear-gradient(135deg, #f6ad55 0%, #ed8936 100%);
+    color: #ffffff;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(237, 137, 54, 0.4);
+    animation: pulse 2s infinite;
+    border: 2px solid #ed8936;
+}
+
+.help-card:last-child .help-btn:hover {
+    background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(237, 137, 54, 0.6);
+}
+
+/* Icon Bounce Animation */
+@keyframes iconBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Enhanced Pulse Animation for View Docs */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(237, 137, 54, 0.4);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 6px 20px rgba(237, 137, 54, 0.7);
+        transform: scale(1.02);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .how-to-book-footer {
+        margin-top: 30px;
+        padding-top: 20px;
+    }
+
+    .how-to-book-footer p {
+        font-size: 14px;
+    }
+
+    .faq-link-btn {
+        padding: 12px 28px;
+        font-size: 15px;
+    }
+
+    .help-card:last-child::before {
+        font-size: 10px;
+        padding: 3px 10px;
+        top: -10px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-link-btn {
+        padding: 10px 24px;
+        font-size: 14px;
+        width: 90%;
+        max-width: 280px;
+    }
+
+    .help-card:last-child::before {
+        font-size: 9px;
+        padding: 3px 8px;
+        top: -8px;
+        right: 10px;
+    }
+}
+
+/* Update main content padding */
+main {
+    padding: 60px 24px 40px; /* Reduce bottom padding since we added it to body */
+    margin: 0 auto;
+    max-width: 1200px;
+    color: #2d3748; /* Professional dark gray */
+    text-align: center;
+    min-height: auto; /* Remove fixed min-height */
+    font-size: 17px;
+}
+
+/* Add content sections styling for booking website */
+.content-section {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 40px;
+    margin: 24px 0;
+    box-shadow: 0 2px 12px rgba(26, 54, 93, 0.08);
+    border: 1px solid #e2e8f0;
+}
+
+.content-section h2 {
+    color: #1a365d;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.content-section h3 {
+    color: #2c5282;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.content-section p {
+    color: #4a5568;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+/* Button styling for booking CTAs */
+.booking-button {
+    background: #e53e3e;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin: 16px 8px;
+}
+
+.booking-button:hover {
+    background: #c53030;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(197, 48, 48, 0.3);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.secondary-button {
+    background: #4a5568;
+    color: #ffffff;
+    font-weight: 500;
+    padding: 12px 32px;
+    border: 2px solid #718096;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin: 16px 8px;
+}
+
+.secondary-button:hover {
+    background: #718096;
+    border-color: #a0aec0;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        padding-top: 100px;
+        padding-bottom: 100px; /* Increase for mobile */
+    }
+
+    .institution-container {
+        bottom: 100px; /* Adjust for mobile footer spacing */
+        width: calc(100% - 32px);
+        padding: 20px 16px;
+    }
+
+    .institution-container h2 {
+        font-size: 20px;
+    }
+
+    .institution-info p {
+        font-size: 13px;
+    }
+
+    .content-section {
+        padding: 24px 20px;
+        margin: 16px 0;
+    }
+
+    .content-section h2 {
+        font-size: 24px;
+    }
+
+    .content-section h3 {
+        font-size: 18px;
+    }
+
+    .booking-button,
+    .secondary-button {
+        padding: 10px 24px;
+        font-size: 14px;
+        margin: 12px 4px;
+        width: calc(100% - 8px);
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .institution-container {
+        bottom: 80px;
+        width: calc(100% - 24px);
+        padding: 16px 12px;
+    }
+
+    .institution-container h2 {
+        font-size: 18px;
+    }
+
+    .institution-info img {
+        max-width: 200px;
+        height: auto;
+    }
+
+    .content-section {
+        padding: 20px 16px;
+    }
+
+    .content-section h2 {
+        font-size: 22px;
+    }
+
+    .booking-button,
+    .secondary-button {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+
+.about-us h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a365d;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #2c5282;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-us p {
+    padding: 10px 24px 0; 
+    margin: 0 auto;
+    max-width: 1200px;
+    color: #2d3748;
+    text-align: center;
+    min-height: auto;
+    font-size: 17px;
+}
+
+.about-us {
+    margin-bottom: 60px !important; 
+}
+
+/* Container must be relative */
+.slider {
+    position: relative;
+    width: 1000px; /* Increased width for a better look */
+    max-width: 95%;
+    height: 500px;
+    margin: 50px auto;
+    border-radius: 20px;
+    overflow: hidden; 
+}
+
+.slides {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+    position: relative; /* THIS IS THE FIX: it anchors the white box */
+    min-width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills the area without distorting */
+}
+
+.indicators {
+    position: absolute;
+    bottom: 10px; /* Position them at the very bottom edge of the slider */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 20; /* Must be higher than .bottom-center (which is 10) */
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.1); /* Subtle outline */
+}
+
+.dot.active {
+    background-color: #2c5282; /* Solid white for active */
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.bottom-center {
+    position: absolute;
+    bottom: 0; /* Box must sit flush at the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    /* Only top corners are rounded */
+    border-radius: 20px 20px 0 0; 
+    /* Use a softer shadow so it doesn't look cut off */
+    box-shadow: 0 -10px 25px rgba(0,0,0,0.05); 
+    z-index: 10;
+}
+
+/* These pseudo-elements create the outer "curvature" logic */
+.bottom-center::before,
+.bottom-center::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    z-index: -1;
+}
+
+.bottom-center::before {
+    left: -40px;
+    /* This creates the inverted curve illusion */
+    mask: radial-gradient(40px at top left, #0000 98%, #000);
+}
+
+.bottom-center::after {
+    right: -40px;
+    mask: radial-gradient(40px at top right, #0000 98%, #000);
+}
+
+/* Typography Adjustments */
+.luxury-heading {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #1a365d;
+    text-transform: uppercase;
+}
+
+.luxury-subtitle {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #4a5568;
+}
+
+/* Container to align buttons side-by-side */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+/* Base style for the <a> tags acting as buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    font-family: "Segoe UI", Roboto, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none; /* Removes the blue underline */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: 2px solid transparent;
+}
+
+/* Primary Button: Solid Gold/Yellow */
+.btn.primary {
+    background-color: #ffc727;
+    color: #1a365d; /* Dark blue text for contrast */
+    box-shadow: 0 4px 12px rgba(255, 199, 39, 0.3);
+}
+
+.btn.primary:hover {
+    background-color: #e5b120;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(255, 199, 39, 0.4);
+}
+
+/* Secondary Button: Outlined Blue */
+.btn.secondary {
+    background-color: transparent;
+    color: #1a365d;
+    border-color: #1a365d;
+}
+
+.btn.secondary:hover {
+    background-color: #1a365d;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(26, 54, 93, 0.2);
+}
+
+@media (max-width: 768px) {
+    .slider {
+        height: 420px;
+    }
+
+    .bottom-center {
+        width: 85%;
+        padding: 14px 16px;
+    }
+
+    .luxury-heading {
+        font-size: 1.3rem;
+    }
+
+    .luxury-subtitle {
+        font-size: 0.85rem;
+        margin: 6px 0;
+    }
+
+    .buttons {
+        gap: 8px;
+        margin-top: 10px;
+        margin-bottom: 8px;
+    }
+
+    /* Kekalkan side by side, jangan column */
+    .btn {
+        padding: 8px 16px;
+        font-size: 11px;
+        flex: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider {
+        height: 400px;
+    }
+
+    .bottom-center {
+        width: 90%;
+        padding: 10px 14px;
+    }
+
+    .luxury-heading {
+        font-size: 1.1rem;
+        margin-bottom: 4px;
+    }
+
+    .luxury-subtitle {
+        font-size: 0.78rem;
+        margin: 4px 0;
+    }
+
+    .buttons {
+        flex-direction: row !important; /* Override column dari existing CSS */
+        gap: 8px;
+        margin-top: 8px;
+        margin-bottom: 6px;
+        padding: 0 !important;
+    }
+
+    .btn {
+        width: auto !important; /* Override width: 100% dari existing CSS */
+        flex: 1;
+        padding: 8px 10px;
+        font-size: 11px;
+        margin: 0 !important;
+    }
+}

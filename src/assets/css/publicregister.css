@@ -1,0 +1,206 @@
+/* ========== Global Reset ========== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+/* ========== Body ========== */
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* ================= LAYOUT ================= */
+.glass-container{
+    position: relative;
+    width: 380px; 
+    padding: 40px;
+    border-radius: 16px; 
+    background: #ffffff; /* Solid white */
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 32px rgba(26, 54, 93, 0.15);
+    z-index: 10; 
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.glass-container:hover {
+    box-shadow: 0 12px 40px rgba(26, 54, 93, 0.2);
+}
+
+.glass-container::before{
+    display: none; /* Remove glass shimmer */
+}
+
+.glass-container h2{
+    color: #1a365d; /* Navy blue */
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: -0.5px;
+    margin-bottom: 40px;
+}
+
+/* ================= INPUT ================= */
+.input-group{
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-group input{
+    width: 100%;
+    padding: 15px 20px;
+    background: #f7fafc;
+    border: 2px solid #e2e8f0;
+    outline: none;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #2d3748;
+    transition: all 0.3s ease;
+}
+
+.input-group input::placeholder{
+    color: #718096;
+}
+
+.input-group input:focus{
+    background: #ffffff;
+    border-color: #2c5282;
+    box-shadow: 0 0 0 3px rgba(44, 82, 130, 0.1);
+}
+
+.input-group label{
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: #718096;
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -12px;
+    left: 15px;
+    font-size: 12px;
+    background: #ffffff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #2c5282;
+    font-weight: 500;
+}
+
+/* ================= BUTTON ================= */
+.register-btn{
+    width: 100%;
+    padding: 15px;
+    background: #e53e3e; /* Red */
+    border: 2px solid #c53030;
+    outline: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.register-btn:hover{
+    background: #c53030;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(197, 48, 48, 0.3);
+}
+
+.register-btn:active {
+    transform: translateY(0);
+}
+
+/* ================= LOGIN LINK ================= */
+.login-link {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+}
+
+.login-link a {
+    color: #2c5282;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Two-column login layout ===== */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    margin: 60px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(26, 54, 93, 0.15);
+    overflow: hidden;
+}
+
+/* Left illustration */
+.login-image {
+    flex: 1;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.login-image img {
+    max-width: 90%;
+    height: auto;
+}
+
+/* Right login form */
+.login-wrapper .glass-container {
+    flex: 1;
+    box-shadow: none; /* remove double shadow */
+    border: none;     /* remove double border */
+    margin: 0;
+    border-radius: 0;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 768px) {
+    .login-wrapper {
+        flex-direction: column;
+    }
+    .login-image {
+        display: none; /* Hide image on mobile for simplicity */
+    }
+}
+
+.simple-footer {
+    background: #1a365d;
+    padding: 15px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.simple-footer p {
+    margin: 0;
+    color: #cbd5e0;
+    font-size: 13px;
+}

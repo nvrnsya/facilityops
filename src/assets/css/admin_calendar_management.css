@@ -1,0 +1,450 @@
+/* assets/css/admin_calendar_management.css */
+
+/* ========== Main Content ========== */
+main {
+    flex: 1;
+    margin-left: 280px;
+    padding: 40px;
+    max-width: calc(100% - 320px);
+    margin-right: 20px;
+    min-height: calc(100vh - 150px);
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Calendar Sections */
+.calendar-section {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(26, 54, 93, 0.12);
+    margin-bottom: 30px;
+    padding: 30px;
+    border: 1px solid #e2e8f0;
+}
+
+.calendar-section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #2c5282;
+    margin-top: 0;
+}
+
+/* Form Controls */
+.form-control {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #2d3748;
+    background: #f7fafc;
+    transition: border-color 0.3s ease, background 0.3s ease;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #2c5282;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(44, 82, 130, 0.1);
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 8px;
+}
+
+/* Form Row for Side-by-Side */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.save-btn {
+    background: #2c5282;
+    color: #fff;
+}
+
+.save-btn:hover {
+    background: #1a365d;
+    box-shadow: 0 4px 12px rgba(44, 82, 130, 0.3);
+    transform: translateY(-2px);
+}
+
+.save-btn:active {
+    transform: translateY(0);
+}
+
+/* Calendar Grid */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* Flatpickr Calendar Styles */
+.flatpickr-calendar {
+    width: 100%;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Status Legend */
+.status-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #4a5568;
+}
+
+.legend-box {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.legend-box.available {
+    background-color: #48bb78;
+}
+
+.legend-box.holiday {
+    background-color: #ed8936;
+}
+
+.legend-box.unavailable {
+    background-color: #e53e3e;
+}
+
+/* ================= PAGINATION STYLES ================= */
+.pagination-info {
+    text-align: center;
+    margin: 20px 0 15px 0;
+    padding: 12px 20px;
+    background: #edf2f7;
+    border-radius: 8px;
+    color: #2d3748;
+    font-size: 14px;
+    font-weight: 500;
+    border-left: 4px solid #2c5282;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 20px 0;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 12px;
+    flex-wrap: wrap;
+}
+
+.pagination-btn {
+    padding: 10px 14px;
+    text-decoration: none;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    color: #2d3748;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    min-width: 40px;
+    text-align: center;
+    background: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.pagination-btn:hover {
+    background-color: #2c5282;
+    color: white;
+    border-color: #2c5282;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(44, 82, 130, 0.3);
+}
+
+.pagination-btn.active {
+    background-color: #1a365d;
+    color: white;
+    border-color: #1a365d;
+    font-weight: 700;
+    box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.15);
+}
+
+.pagination-btn.disabled {
+    color: #cbd5e0;
+    background-color: #f7fafc;
+    border-color: #e2e8f0;
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+#recentPagination {
+    margin-top: 20px;
+}
+
+.date-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px;
+    border-bottom: 1px solid #e2e8f0;
+    transition: background 0.2s ease;
+}
+
+.date-item:last-child {
+    border-bottom: none;
+}
+
+.date-item:hover {
+    background-color: #f7fafc;
+}
+
+.date-item-date {
+    font-weight: 500;
+    color: #2d3748;
+    font-size: 14px;
+}
+
+.date-item-status {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+}
+
+.date-item-status.available {
+    background-color: #48bb78;
+}
+
+.date-item-status.holiday {
+    background-color: #ed8936;
+}
+
+.date-item-status.unavailable {
+    background-color: #e53e3e;
+}
+
+/* Alert Messages */
+.alert {
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    border-left: 4px solid;
+    display: none;
+    animation: slideInDown 0.4s ease-out;
+}
+
+.alert.success {
+    background: rgba(72, 187, 120, 0.1);
+    color: #22543d;
+    border-left-color: #38a169;
+    display: block;
+}
+
+.alert.error {
+    background: rgba(229, 62, 62, 0.1);
+    color: #742a2a;
+    border-left-color: #e53e3e;
+    display: block;
+}
+
+.alert.show {
+    display: block;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .calendar-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .calendar-section {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .calendar-section h3 {
+        font-size: 16px;
+    }
+
+    .form-control {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar-section {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .calendar-section h3 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .form-control {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .btn {
+        padding: 10px 16px;
+        font-size: 12px;
+        width: 100%;
+    }
+
+    .form-group label {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+
+    .status-legend {
+        gap: 10px;
+        margin-top: 15px;
+        padding-top: 15px;
+    }
+
+    .legend-item {
+        font-size: 13px;
+    }
+
+    .legend-box {
+        width: 20px;
+        height: 20px;
+    }
+
+    .date-item {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .date-item-status {
+        padding: 4px 10px;
+        font-size: 11px;
+    }
+}
+
+/* Submenu styling */
+.side-menu .has-submenu > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.side-menu .submenu {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.side-menu .has-submenu.active .submenu {
+    display: block;
+}
+
+.side-menu .submenu li a {
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+.side-menu .arrow {
+    font-size: 12px;
+    transition: transform 0.3s;
+}
+
+.side-menu .has-submenu.active .arrow {
+    transform: rotate(180deg);
+}

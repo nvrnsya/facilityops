@@ -1,0 +1,915 @@
+/* ==== Reset ==== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==== Body + Background ==== */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    color: #2d3748;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+/* ==== Container ==== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==== Page Header ==== */
+h2 {
+    text-align: center;
+    margin: 30px 0 40px 0;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a365d;
+}
+
+/* ==== Summary Container ==== */
+.summary-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 100%;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.summary-box {
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
+    border-radius: 16px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(26, 54, 93, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.summary-box:hover {
+    box-shadow: 0 8px 30px rgba(26, 54, 93, 0.15);
+}
+
+.summary-box h2 {
+    color: #1a365d;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.summary-box h3 {
+    color: #1a365d;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.summary-box hr {
+    border: none;
+    border-top: 2px solid #e2e8f0;
+    margin: 15px 0 25px 0;
+}
+
+.summary-box p {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 15px;
+    margin: 12px 0;
+    color: #4a5568;
+    font-size: 15px;
+    line-height: 1.6;
+    align-items: start;
+}
+
+.summary-box strong {
+    text-align: left;
+    padding-right: 10px;
+    font-weight: 600;
+    color: #1a202c;
+}
+
+.summary-box span {
+    display: inline-block;
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: #2d3748;
+    word-wrap: break-word;
+}
+
+/* ==== Navigation Buttons ==== */
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.btn-secondary {
+    background: #2c5282;
+    color: #ffffff;
+    border: 2px solid #2a4d7b;
+    padding: 14px 50px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-secondary:hover {
+    background: #2a4d7b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(42, 77, 123, 0.3);
+}
+
+/* ==== Table Container (for list pages) ==== */
+.table-container {
+    width: 95%;
+    max-width: 1600px;
+    margin: 0 auto 50px auto;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 0;
+    box-shadow: 0 4px 20px rgba(26, 54, 93, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.table-container:hover {
+    box-shadow: 0 8px 30px rgba(26, 54, 93, 0.15);
+}
+
+/* ==== Table Styling ==== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 15px;
+}
+
+th {
+    background: #2c5282;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #2a4d7b;
+}
+
+tr {
+    transition: background-color 0.2s ease;
+}
+
+tr:hover {
+    background-color: #f7fafc;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+td {
+    color: #4a5568;
+}
+
+/* ==== Status Badges ==== */
+.status-pending {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    background: rgba(237, 137, 54, 0.1);
+    color: #d69e2e;
+    border: 1px solid rgba(237, 137, 54, 0.2);
+}
+
+.status-approved {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    background: rgba(72, 187, 120, 0.1);
+    color: #38a169;
+    border: 1px solid rgba(72, 187, 120, 0.2);
+}
+
+.status-rejected {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    background: rgba(229, 62, 62, 0.1);
+    color: #e53e3e;
+    border: 1px solid rgba(229, 62, 62, 0.2);
+}
+
+/* ==== Action Links ==== */
+.actions-cell {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.actions-cell a {
+    text-decoration: none;
+    color: #2c5282;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    background: #f7fafc;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.actions-cell a:hover {
+    background: #2c5282;
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(44, 82, 130, 0.2);
+}
+
+/* ==== Radio Group ==== */
+.action-cell {
+    text-align: center;
+}
+
+.radio-group {
+    display: inline-flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.radio-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #4a5568;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.radio-group label:hover {
+    background-color: #f7fafc;
+}
+
+.radio-group input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: #2c5282;
+}
+
+/* ==== Empty State ==== */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #718096;
+    font-size: 16px;
+}
+
+.empty-state p {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #4a5568;
+}
+
+/* ==== Responsive Design ==== */
+@media (max-width: 1200px) {
+    .summary-box {
+        max-width: 800px;
+        padding: 35px;
+    }
+
+    .summary-box p {
+        grid-template-columns: 180px 1fr;
+        gap: 12px;
+    }
+
+    th, td {
+        padding: 14px 16px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 900px) {
+    body {
+        padding: 30px 15px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        margin: 20px 0 30px 0;
+    }
+
+    .summary-box {
+        padding: 30px;
+    }
+
+    .summary-box p {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .summary-box strong {
+        text-align: left;
+        padding-right: 0;
+    }
+
+    .summary-box span {
+        margin-top: 4px;
+    }
+
+    .table-container {
+        width: 98%;
+    }
+
+    th, td {
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    th {
+        font-size: 12px;
+    }
+
+    .actions-cell {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .actions-cell a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin: 15px 0 25px 0;
+    }
+
+    .summary-container {
+        padding: 0 10px;
+    }
+
+    .summary-box {
+        padding: 25px 20px;
+    }
+
+    .summary-box h3 {
+        font-size: 1.1rem;
+        margin-top: 25px;
+    }
+
+    .summary-box p {
+        font-size: 14px;
+        margin: 10px 0;
+    }
+
+    .summary-box span {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .btn-secondary {
+        width: 100%;
+        padding: 14px 30px;
+    }
+
+    .table-container {
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+        min-width: 800px;
+    }
+
+    th, td {
+        padding: 10px 12px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    th {
+        font-size: 11px;
+    }
+
+    .status-pending,
+    .status-approved,
+    .status-rejected {
+        padding: 4px 10px;
+        font-size: 11px;
+    }
+
+    .actions-cell a {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .summary-box {
+        padding: 20px 15px;
+    }
+
+    .summary-box h3 {
+        font-size: 1rem;
+    }
+
+    .summary-box p {
+        font-size: 13px;
+    }
+
+    table {
+        min-width: 700px;
+    }
+
+    th, td {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+}
+
+/* Back to Top Button */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #2c5282;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(44, 82, 130, 0.4);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#backToTop:hover {
+    background: #1a365d;
+}
+
+/* ============================================
+   PRINT BUTTON STYLING
+   ============================================ */
+.btn-print {
+    background: #48bb78;
+    color: #ffffff;
+    border: 2px solid #38a169;
+    padding: 14px 50px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-print:hover {
+    background: #38a169;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(56, 161, 105, 0.3);
+}
+
+/* ==== Hide print-only elements on screen ==== */
+.print-header,
+.print-booking-id,
+.print-footer {
+    display: none;
+}
+
+/* ============================================
+   PRINT MEDIA QUERIES - OPTIMIZED FOR SINGLE PAGE
+   ============================================ */
+@media print {
+    /* ==== Page Setup ==== */
+    @page {
+        margin: 12mm 15mm;
+        size: A4 portrait;
+    }
+    
+    /* ==== Hide screen-only elements ==== */
+    .navigation-buttons,
+    .back-to-top,
+    #backToTop,
+    h2 {
+        display: none !important;
+    }
+
+    /* ==== Reset body and container - CRITICAL ==== */
+    html, body {
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: white !important;
+        font-size: 11pt;
+    }
+
+    body {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .container {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: white !important;
+    }
+
+    .page-2 {
+        padding: 0 !important;
+        margin: 0 !important;
+        page-break-after: auto !important;
+        page-break-inside: avoid !important;
+    }
+
+    /* ==== Show print-only elements ==== */
+    .print-header,
+    .print-booking-id,
+    .print-footer {
+        display: block !important;
+    }
+
+    /* ============================================
+       PROFESSIONAL HEADER - FORMAL LETTERHEAD
+       ============================================ */
+    .print-header {
+        text-align: center;
+        padding: 10px 0 8px 0;
+        border: 2pt solid #1a365d;
+        border-bottom: 3pt double #1a365d;
+        margin-bottom: 12px;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+        background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+    }
+
+    .print-header h1 {
+        margin: 0;
+        font-size: 22pt;
+        color: #1a365d;
+        font-weight: 700;
+        letter-spacing: 2pt;
+        line-height: 1.2;
+        text-transform: uppercase;
+    }
+
+    .print-header .subtitle {
+        margin: 4px 0 0 0;
+        font-size: 11pt;
+        color: #2d3748;
+        font-weight: 600;
+        line-height: 1.2;
+        text-transform: uppercase;
+        letter-spacing: 0.5pt;
+    }
+
+    /* ============================================
+       BOOKING ID & METADATA - FORMAL
+       ============================================ */
+    .print-booking-id {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+        padding: 6px 10px;
+        font-size: 9.5pt;
+        color: #1a365d;
+        background: #f8f9fa;
+        border: 1pt solid #cbd5e0;
+        border-left: 3pt solid #2c5282;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+        line-height: 1.4;
+    }
+
+    .print-booking-id strong {
+        color: #1a365d;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 9pt;
+        letter-spacing: 0.3pt;
+    }
+
+    /* ============================================
+       SUMMARY CONTAINER & BOX - FORMAL DOCUMENT
+       ============================================ */
+    .summary-container {
+        padding: 0 !important;
+        margin: 10px 0 !important;
+        page-break-inside: avoid;
+    }
+
+    .summary-box {
+        box-shadow: none !important;
+        border: 2pt solid #2c5282;
+        border-radius: 0 !important;
+        padding: 15px 18px !important;
+        background: white !important;
+        margin: 0 !important;
+        page-break-inside: auto;
+    }
+
+    .summary-box::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3pt;
+        background: #2c5282;
+    }
+
+    /* ============================================
+       SECTION HEADERS - FORMAL SECTIONS
+       ============================================ */
+    .summary-box h3 {
+        color: #1a365d !important;
+        background: white !important;
+        font-size: 11pt !important;
+        margin: 0 0 8px 0 !important;
+        padding: 6px 0 4px 0 !important;
+        border-bottom: 2pt solid #1a365d !important;
+        border-left: none !important;
+        text-transform: uppercase;
+        letter-spacing: 1pt;
+        font-weight: 700 !important;
+        page-break-after: avoid;
+        line-height: 1.3;
+    }
+
+    .summary-box h3:not(:first-child) {
+        margin-top: 15px !important;
+        page-break-before: avoid;
+    }
+    
+    .summary-box hr {
+        display: none !important;
+    }
+
+    /* ==== Delete Button (Danger) ==== */
+    .btn-danger {
+        background: #e53e3e;
+        color: #ffffff;
+        border: 2px solid #c53030;
+        padding: 14px 50px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+    }
+    
+    .btn-danger:hover {
+        background: #c53030;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(197, 48, 48, 0.3);
+    }
+
+    /* ============================================
+       CONTENT ROWS - FORMAL FORM FIELDS
+       ============================================ */
+    .summary-box p {
+        display: table !important;
+        width: 100%;
+        margin: 5px 0 !important;
+        font-size: 10pt !important;
+        line-height: 1.4 !important;
+        page-break-inside: avoid;
+        border-bottom: 0.75pt solid #cbd5e0;
+    }
+
+    .summary-box p strong {
+        display: table-cell;
+        width: 40%;
+        color: #1a365d !important;
+        font-weight: 700 !important;
+        padding: 5px 10px 5px 0;
+        text-align: left !important;
+        font-size: 9.5pt !important;
+        vertical-align: middle;
+        text-transform: uppercase;
+        letter-spacing: 0.3pt;
+        background: white;
+    }
+
+    .summary-box p strong::after {
+        content: ':';
+        margin-left: 2px;
+    }
+
+    .summary-box p span {
+        display: table-cell;
+        width: 60%;
+        color: #000000 !important;
+        background: white !important;
+        border: none !important;
+        border-left: 1pt solid #cbd5e0 !important;
+        border-radius: 0 !important;
+        padding: 5px 10px !important;
+        word-wrap: break-word;
+        font-size: 10pt !important;
+        vertical-align: middle;
+        font-weight: 500;
+    }
+
+    /* Rejection Notes Section */
+    .rejection-notes-section {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 2px solid #f8d7da;
+    }
+    
+    .rejection-notes-box {
+        background-color: #fff3cd;
+        border-left: 4px solid #ffc107;
+        padding: 20px;
+        margin-top: 15px;
+        border-radius: 4px;
+    }
+    
+    .rejection-notes-box p {
+        margin-bottom: 10px;
+    }
+    
+    .rejection-notes-content {
+        background-color: #ffffff;
+        padding: 15px;
+        border-radius: 4px;
+        border: 1px solid #ffc107;
+        margin-top: 10px;
+        font-size: 15px;
+        line-height: 1.6;
+        color: #333;
+    }
+    
+    /* Print styles for rejection notes */
+    @media print {
+        .rejection-notes-section {
+            page-break-inside: avoid;
+        }
+        
+        .rejection-notes-box {
+            border: 1px solid #000;
+            background-color: #f8f8f8 !important;
+        }
+        
+        .rejection-notes-content {
+            border: 1px solid #666;
+            background-color: #ffffff !important;
+        }
+    }
+    /* ============================================
+       PRINT FOOTER - FORMAL CERTIFICATION
+       ============================================ */
+    .print-footer {
+        margin-top: 20px;
+        padding-top: 12px;
+        border-top: 2pt double #2c5282;
+        page-break-inside: avoid;
+    }
+
+    .print-date-footer {
+        text-align: center;
+        font-size: 9pt;
+        color: #4a5568;
+        margin-bottom: 8px;
+        line-height: 1.3;
+        font-style: italic;
+    }
+
+    /* Signature Section - FORMAL */
+    .print-signature {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-around;
+        padding: 0 30px;
+        page-break-inside: avoid;
+    }
+
+    .signature-box {
+        text-align: center;
+        min-width: 180px;
+    }
+
+    .signature-box p {
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        display: block !important;
+    }
+
+    .signature-line {
+        border-top: 2pt solid #1a365d;
+        margin-top: 40px;
+        padding-top: 8px;
+        font-size: 9.5pt;
+        color: #1a365d;
+        font-weight: 700;
+        line-height: 1.3;
+        text-transform: uppercase;
+        letter-spacing: 0.5pt;
+    }
+
+    .signature-box p strong {
+        display: inline !important;
+        width: auto !important;
+        padding: 0 !important;
+        background: none !important;
+        font-size: 9.5pt !important;
+    }
+
+    .signature-box p strong::after {
+        content: none !important;
+    }
+
+    /* ============================================
+       PREVENT PAGE BREAKS
+       ============================================ */
+    .summary-box h3,
+    .summary-box p,
+    .print-header,
+    .print-booking-id,
+    .signature-box {
+        page-break-inside: avoid !important;
+    }
+
+    /* ============================================
+       COLOR ACCURACY
+       ============================================ */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}

@@ -1,0 +1,280 @@
+/* ================= GLOBAL RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+/* ========== Body ========== */
+body { 
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); /* Light gradient background */
+    color: #2d3748;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    padding-top: 70px;
+    padding-bottom: 80px; /* Add this to prevent content from hiding behind footer */
+    line-height: 1.6;
+    overflow-x: hidden; /* Change from overflow: hidden to allow vertical scrolling */
+}
+
+/* ================= HEADINGS ================= */
+h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 20px 0 30px 0;
+    margin-top: 50px;
+    color: #1a365d; /* Navy blue */
+    letter-spacing: -0.5px;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin: 10px auto 0 auto;
+    background: #2c5282; /* Accent blue */
+    border-radius: 20px;
+}
+
+/* ================= LAYOUT ================= */
+.container { 
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto 60px auto;
+    background: #ffffff;
+    padding: 32px; 
+    border-radius: 16px; 
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 32px rgba(26, 54, 93, 0.12);
+    transition: box-shadow 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 12px 40px rgba(26, 54, 93, 0.18);
+}
+
+.card {
+    width: 70%; 
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 25px 30px;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 6px 20px rgba(26, 54, 93, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 10px 28px rgba(26, 54, 93, 0.15);
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #1a365d;
+}
+
+/* ================= FORM ================= */
+.form-group {
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2d3748;
+}
+
+.form-group label span {
+    color: #e53e3e; /* Red for required */
+}
+
+.form-group input {
+    width: 95%;
+    padding: 12px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #2d3748;
+    background: #f7fafc;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #2c5282;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(44, 82, 130, 0.1);
+    outline: none;
+}
+
+/* ================= BUTTON ================= */
+.form-actions {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.save-btn {
+    border: 2px solid #3182ce;
+    padding: 10px 22px;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #3182ce;
+    color: #fff;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.save-btn:hover {
+    background: #1a365d;
+    border-color: #1a365d;
+    box-shadow: 0 2px 8px rgba(26,54,93,0.3);
+}
+
+/* ================= POPUP ================= */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    color: #2d3748;
+    padding: 22px 30px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 28px rgba(26,54,93,0.18);
+    display: none;
+    z-index: 2000;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.popup button {
+    margin-top: 15px;
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: 2px solid #2c5282;
+    cursor: pointer;
+    background: #2c5282;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.popup button:hover {
+    background: #1a365d;
+    border-color: #1a365d;
+    box-shadow: 0 2px 8px rgba(26,54,93,0.3);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -48%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* Back to Top Button */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #2c5282;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(44, 82, 130, 0.4);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#backToTop:hover {
+    background: #1a365d;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px 16px;
+        margin: 16px auto;
+    }
+
+    .card {
+        width: 100%;
+        padding: 20px 16px;
+        margin: 12px auto;
+    }
+
+    .form-group {
+        margin-bottom: 16px;
+        margin-left: 0;
+    }
+
+    .form-group input {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    .card h3 {
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+
+    .form-actions {
+        text-align: center;
+    }
+
+    .save-btn {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 16px 12px;
+        margin: 10px auto;
+        border-radius: 12px;
+    }
+
+    .card {
+        width: 100%;
+        padding: 16px 12px;
+        margin: 10px auto;
+    }
+
+    .form-group input {
+        width: 100%;
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+
+    .form-group label {
+        font-size: 13px;
+    }
+}

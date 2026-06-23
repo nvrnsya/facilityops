@@ -1,0 +1,233 @@
+/* ================= MATURE NOTIFICATION BADGES ================= */
+.notification-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px; /* Slightly smaller for maturity */
+    height: 22px;
+    padding: 0 7px;
+    /* Swapped red for Corporate Blue or White depending on state */
+    background: #3182ce; 
+    color: #ffffff;
+    border-radius: 6px; /* Matching the 8px/6px radius of your theme links */
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: auto;
+    box-shadow: 0 2px 6px rgba(49, 130, 206, 0.2);
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Removed heavy pulse animations for a cleaner "Dashboard" look */
+.notification-badge::before {
+    display: none; /* Removed the distracting outer ring animation */
+}
+
+/* High count badge: Uses a more serious deep navy/slate instead of bright red */
+.notification-badge.high-count {
+    background: #2c5282;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Badge state when the parent link is active */
+.side-menu li a.active .notification-badge {
+    background: rgba(255, 255, 255, 0.15); /* Glass effect on active */
+    color: #ffffff;
+    font-weight: 600;
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: none;
+}
+
+/* ========== Modern Mature Side Panel (Midnight Glassmorphism) ========== */
+.side-panel {
+    width: 260px;
+    /* Professional Midnight Slate with Transparency */
+    background: rgba(15, 23, 42, 0.98); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    min-height: calc(100vh - 150px);
+    padding: 20px 0;
+    
+    /* Clean, crisp border instead of heavy shadow */
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+    
+    position: fixed;
+    top: 70px; /* Aligned with your new header height */
+    left: 0;
+    height: calc(100vh - 70px);
+    z-index: 100;
+}
+
+/* Header Section of Side Panel */
+.side-panel h3 {
+    color: #ffffff;
+    font-size: 16px; /* Scaled down for maturity */
+    font-weight: 600;
+    padding: 0 24px 15px;
+    margin: 0 0 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+    letter-spacing: 0.5px;
+    text-transform: uppercase; /* Modern professional look */
+    opacity: 0.9;
+}
+
+.side-panel h3 a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.side-panel h3 a:hover {
+    color: #3182ce;
+}
+
+/* Menu List */
+.side-menu {
+    list-style: none;
+    padding: 0 12px; /* Added inner padding for a "floating" item look */
+    margin: 0;
+}
+
+.side-menu li {
+    margin-bottom: 4px;
+}
+
+/* Menu Links */
+.side-menu a {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    color: rgba(255, 255, 255, 0.75); /* Muted off-white */
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px; /* Matching your header links */
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    border: 1px solid transparent;
+}
+
+/* Hover State: Subtle Highlight & Slide */
+.side-menu a:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    padding-left: 20px; /* Refined subtle slide */
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Active State: Corporate Blue Theme */
+.side-menu a.active {
+    background: rgba(49, 130, 206, 0.2);
+    color: #ffffff;
+    font-weight: 600;
+    border-color: rgba(66, 153, 225, 0.3);
+}
+
+/* Icons styling */
+.side-menu a::before {
+    margin-right: 12px;
+    font-size: 18px;
+    filter: grayscale(1) brightness(1.5); /* Makes emojis look more professional/muted */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.side-menu a:hover::before {
+    transform: scale(1.1);
+    filter: grayscale(0) brightness(1); /* Color returns on hover */
+}
+
+/* Active Icon */
+.side-menu a.active::before {
+    filter: grayscale(0) brightness(1);
+}
+
+/* Submenu styling */
+.side-menu .has-submenu > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.side-menu .submenu {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.side-menu .has-submenu.active .submenu {
+    display: block;
+}
+
+.side-menu .submenu li a {
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+.side-menu .arrow {
+    font-size: 12px;
+    transition: transform 0.3s;
+}
+
+.side-menu .has-submenu.active .arrow {
+    transform: rotate(180deg);
+}
+
+/* ================= FORM PREVIEW & BADGES (LIGHT THEME) ================= */
+/* These usually sit on a light background, so we use refined slate/blue */
+
+.field-type-badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid transparent;
+}
+
+/* Harmonized color palette for field types */
+.type-text { background: #f1f5f9; color: #475569; border-color: #e2e8f0; }
+.type-email { background: #eff6ff; color: #1e40af; border-color: #dbeafe; }
+.type-date { background: #f0fdf4; color: #166534; border-color: #dcfce7; }
+.type-checkbox { background: #fff1f2; color: #9f1239; border-color: #ffe4e6; }
+
+.section-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    background: #f8fafc;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+}
+
+.preview-section {
+    background: #ffffff;
+    border: 1px solid #e2e8f0; /* Solid border is more mature than dashed */
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 30px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.preview-field input,
+.preview-field textarea,
+.preview-field select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.preview-field input:focus {
+    outline: none;
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+}
