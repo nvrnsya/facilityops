@@ -47,9 +47,7 @@ This is a **Final Year Project (FYP)** for the Diploma in Information Technology
 facilityops/
 ├── facilityops/          # Main application source code
 ├── docs/                 # System design diagrams (flowcharts, ERD, DFD, etc.)
-├── booking1.png          # Screenshot - booking page
-├── booking3.png          # Screenshot - booking page
-├── login.png             # Screenshot - login page
+├── screenshot/           # Website page (Login, Landpage, Booking Form, etc.)
 ├── README.md
 └── ...
 ```
@@ -95,11 +93,15 @@ facilityops/
 ## Screenshots
 
 ### Login Page
-![Login Page](login.png)
+![Login Page](loginpage.png)
+
+### Home Page
+![Home Page](landpage.png)
 
 ### Booking Page
-![Booking Page 1](booking1.png)
-![Booking Page 2](booking3.png)
+![Booking Page](booking1.png)
+![Calendar Book](bookingcalendar.png)
+![Booking Form](bookingform.png)
 
 ## System Design
 
