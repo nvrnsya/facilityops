@@ -1,0 +1,15 @@
+# Sensitive credentials - NEVER commit this file
+credentials.php
+
+# Composer dependencies (regenerate with: composer install)
+/vendor/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Debug / log files (may contain real user data or server paths)
+*debug*.txt
+error_log.txt
+*.log
