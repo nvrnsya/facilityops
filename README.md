@@ -93,15 +93,15 @@ facilityops/
 ## Screenshots
 
 ### Login Page
-![Login Page](loginpage.png)
+![Login Page](screenshot/loginpage.png)
 
 ### Home Page
-![Home Page](landpage.png)
+![Home Page](screenshot/landpage.png)
 
 ### Booking Page
-![Booking Page](booking1.png)
-![Calendar Book](bookingcalendar.png)
-![Booking Form](bookingform.png)
+![Booking Page](screenshot/booking1.png)
+![Calendar Book](screenshot/bookingcalendar.png)
+![Booking Form](screenshot/bookingform.png)
 
 ## System Design
 
