@@ -44,12 +44,26 @@ This is a **Final Year Project (FYP)** for the Diploma in Information Technology
 
 ## Project Structure
 ```
-facilityops/
-├── facilityops/          # Main application source code
-├── docs/                 # System design diagrams (flowcharts, ERD, DFD, etc.)
-├── screenshot/           # Website page (Login, Landpage, Booking Form, etc.)
+facilityops/                  
 ├── README.md
-└── ...
+├── docs/                    
+├── screenshot/
+└── src/                     
+    ├── .gitignore
+    ├── config.php
+    ├── credentials.example.php
+    ├── auth.php
+    ├── booking.sql
+    ├── composer.json
+    ├── composer.lock
+    ├── default.php
+    ├── FAQpage.php
+    ├── index.php
+    ├── logout.php
+    ├── publicregister.php
+    ├── admin/
+    ├── staff/
+    └── assets/
 ```
 
 ## Installation
