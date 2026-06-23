@@ -1,25 +1,52 @@
-# FacilityOps System
+# Facility Operation System (FacilityOps)
+
+A centralized web-based facility booking system developed for **Politeknik Sultan Mizan Zainal Abidin (PSMZA)**, built to replace manual, paper-based reservation processes for the **Unit Latihan & Pendidikan Lanjutan (ULPL)** and **Unit Pentadbiran**.
+
+🔗 **Live Site:** [facilityops.org](https://facilityops.org/)
 
 ## Overview
-FacilityOps is a simple booking system designed for staff to reserve facilities such as meeting rooms or discussion rooms. It allows staff to view available facilities, make bookings, and manage their reservations efficiently. This system makes the booking process faster, more organized, and helps avoid conflicts or double bookings.
+At PSMZA, key facilities — Bilik Seminar, Dewan Kuliah Utama, Dewan Kuliah 2, Bilik Makan Bauk Inn, Puspanita (under ULPL), and Dewan Dagang (under Unit Pentadbiran) — were previously booked manually through the administrative office. This caused double bookings, scheduling conflicts, and wasted time.
+
+**FacilityOps** digitalizes this process with real-time availability checking, online booking submission, automated approval workflows, and usage analytics — built using the **Agile development methodology**.
+
+This is a **Final Year Project (FYP)** for the Diploma in Information Technology (Digital Technology), Department of ICT, PSMZA — Session I 2025/2026.
 
 ## Features
-- Staff login and authentication
-- View available facilities
-- Make, update, and cancel bookings
-- Check booking history
-- Conflict-free scheduling (prevents double bookings)
+
+### For Staff / Public Users
+- Secure login & self-registration
+- Browse facilities with images and details
+- Real-time availability calendar (🟢 available · 🟡 maintenance/holiday · 🔴 booked)
+- Submit booking requests with key handover details
+- Track booking status (approved / pending / rejected) via profile dashboard
+- View, edit, or cancel bookings
+- View booking history
+- FAQ page with email & phone support
+
+### For Administrators (ULPL & Unit Pentadbiran)
+- Admin dashboard with booking statistics overview
+- Approve/reject booking requests (single or batch)
+- Manage facilities (add/edit/delete, images & descriptions)
+- Calendar management (mark dates as available / unavailable / under maintenance)
+- Manage announcements & FAQs
+- Analytics report — booking trends, top active departments, status distribution (export as PDF/CSV)
+- Role-based admin management (add/remove admin privileges)
 
 ## Technologies Used
-- **Backend:** PHP
-- **Frontend:** HTML, CSS, JavaScript
-- **Database:** MySQL
-- **Local Server:** XAMPP / WAMP
+| Category | Stack |
+|---|---|
+| Backend | PHP |
+| Frontend | HTML, CSS, JavaScript |
+| Database | MySQL |
+| Local Server | XAMPP / WAMP |
+| Editor | Visual Studio Code |
+| Hosting | Hostinger |
 
 ## Project Structure
 ```
 facilityops/
 ├── facilityops/          # Main application source code
+├── docs/                 # System design diagrams (flowcharts, ERD, DFD, etc.)
 ├── booking1.png          # Screenshot - booking page
 ├── booking3.png          # Screenshot - booking page
 ├── login.png             # Screenshot - login page
@@ -45,7 +72,7 @@ facilityops/
 4. **Create the database**
    - Open `phpMyAdmin` (`http://localhost/phpmyadmin`)
    - Create a new database (e.g. `facilityops_db`)
-   - Import the provided `.sql` file (if available) under the **Import** tab
+   - Import the provided `.sql` file under the **Import** tab
 
 5. **Configure database connection**
    - Open the database config file (e.g. `config.php` / `db_connect.php`)
@@ -58,10 +85,12 @@ facilityops/
      ```
 
 ## Usage
-1. Login with staff credentials.
-2. View available facilities.
-3. Select date, time, and facility to make a booking.
-4. View or cancel existing bookings.
+1. Login with staff credentials, or register a new account.
+2. Browse available facilities on the homepage or booking page.
+3. Select a facility, date, and time — check the color-coded availability calendar.
+4. Fill in the booking form, including key handover details, and review the summary.
+5. Submit the request and wait for admin approval/rejection.
+6. Track booking status anytime via the Profile page.
 
 ## Screenshots
 
@@ -73,21 +102,69 @@ facilityops/
 ![Booking Page 2](booking3.png)
 
 ## System Design
-```
-docs/
-├── erd.png
-└── flowchart.png
-```
 
-## Roadmap / Future Improvements
-- [ ] Email notification for booking confirmation
-- [ ] Admin dashboard for managing all bookings
-- [ ] Export booking history to PDF/Excel
-- [ ] Role-based access (Staff vs Admin)
+### User Flow
+![User Flowchart](docs/flowchart_user.png)
 
+### Admin Flow
+![Admin Flowchart](docs/flowchart_admin.jpeg)
 
-## Author
-Developed by **nureen, muaz, dinie** as a Final Year Project (FYP).
+### Context Diagram
+![Context Diagram](docs/context_diagram.png)
+
+### Data Flow Diagram (DFD)
+![Data Flow Diagram](docs/dfd.png)
+
+### Entity Relationship Diagram (ERD)
+![ERD](docs/erd.jpeg)
+
+### Database Structure
+![Database Tables](docs/database_tables.png)
+
+## Testing
+The system was validated through:
+- **Unit Testing** — covering login, facility viewing, booking creation/cancellation, calendar view, approval flow, facility/report management, notifications, and logout (10 test cases, all passed)
+- **Integration Testing** — covering end-to-end flows from login → dashboard → booking → notification → approval → report export (8 test cases, all passed)
+- **User Acceptance Testing (UAT)** — conducted with PSMZA staff, covering interface design, functionality, usability, and performance/reliability
+
+## Methodology
+Developed using the **Agile Model**: Plan → Design → Develop → Test → Deploy → Review → Launch, allowing iterative development with continuous testing and stakeholder feedback from ULPL and Unit Pentadbiran throughout the project.
+
+## Project Significance
+- **User-friendly** — minimal training required
+- **Efficient** — automates booking, approval, and record-keeping
+- **Time-saving** — eliminates manual availability checks
+- **Data-driven** — usage analytics support better resource planning
+- **Accessible** — bookable anytime, from any device
+- **Scalable** — designed to expand to more facilities/departments
+- **Transparent** — full digital audit trail of bookings and approvals
+
+## Limitations & Future Improvements
+- [ ] Automated email/SMS notifications for booking status
+- [ ] Booking search filters and document attachment support
+- [ ] Reduce dependency on stable internet connectivity
+- [ ] Continuous security hardening (encryption, access control reviews)
+- [ ] User training materials/tutorials for staff onboarding
+
+## Team
+Developed by **Team Toman**, Diploma in Information Technology (Digital Technology), PSMZA:
+
+| Name | Registration No. |
+|---|---|
+| Nureen Syafinaz binti Rashdan | 13DDT23F1072 |
+| Muhammad Dinie Hakim bin Muhammad Shafarin | 13DDT23F1012 |
+| Muaz Hilman bin Sudin | 13DDT23F1092 |
+
+**Supervisor:** Puan Zukia Aniza binti Ibrahim
+**Session:** I 2025/2026
+
+## References
+- Apache Friends — XAMPP
+- Visual Studio Code
+- Politeknik Sultan Mizan Zainal Abidin
+- FAI Facilities Booking, Universiti Teknologi Malaysia
+- Rent@UMPOINT, Universiti Malaya
+- e-Fasiliti
 
 ## License
-This project is for academic purposes (Final Year Project). Feel free to use this as a reference.
+This project is developed for academic purposes as a Final Year Project (FYP) at Politeknik Sultan Mizan Zainal Abidin.
